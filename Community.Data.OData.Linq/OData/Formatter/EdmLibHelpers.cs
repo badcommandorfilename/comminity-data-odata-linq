@@ -705,12 +705,12 @@ namespace Community.OData.Linq.OData.Formatter
                 throw Error.ArgumentNull("edmModel");
             }
 
-            //DynamicPropertyDictionaryAnnotation annotation =
-            //    edmModel.GetAnnotationValue<DynamicPropertyDictionaryAnnotation>(edmType);
-            //if (annotation != null)
-            //{
-            //    return annotation.PropertyInfo;
-            //}
+            DynamicPropertyDictionaryAnnotation annotation =
+                edmModel.GetAnnotationValue<DynamicPropertyDictionaryAnnotation>(edmType);
+            if (annotation != null)
+            {
+                return annotation.PropertyInfo;
+            }
 
             return null;
         }
